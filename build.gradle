@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.example.aws'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = '17'
 
 configurations {
@@ -22,9 +22,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    implementation 'software.amazon.awssdk:dynamodb-enhanced:2.19.8'
-    implementation 'software.amazon.awssdk:dynamodb:2.19.8'
-    implementation 'software.amazon.awssdk:sns:2.19.8'
+    implementation platform('software.amazon.awssdk:bom:2.19.8')
+    implementation 'software.amazon.awssdk:dynamodb-enhanced'
+    implementation 'software.amazon.awssdk:dynamodb'
+    implementation 'software.amazon.awssdk:sns'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
